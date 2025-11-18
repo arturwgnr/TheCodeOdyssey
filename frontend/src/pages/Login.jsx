@@ -1,8 +1,10 @@
-import { useState } from "react";
-import api from "../api/api";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+import api from "../api/api";
 
 export default function Login() {
+  const { login } = useContext(AuthContext);
   const nav = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -19,6 +21,7 @@ export default function Login() {
 
         console.log(res.data);
 
+        login(res.data.token, res.data.user);
         setFormData({ email: "", password: "" });
 
         nav("/dashboard");
