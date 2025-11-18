@@ -1,0 +1,128 @@
+/* ===== PAGE WRAPPER ===== */
+.register-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6%;
+  box-sizing: border-box;
+  color: white;
+}
+
+/* ===== CARD CONTAINER ===== */
+.register-card {
+  width: 460px;
+  padding: 40px 36px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(150, 95, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 0.8s ease;
+  transition: 0.3s ease;
+}
+.register-card:hover {
+  box-shadow: 0 0 50px rgba(150, 95, 255, 0.15);
+}
+
+/* ANIMATION */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== TITLE ===== */
+.register-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, #ffffff, #d7c8ff, #9e6dff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.register-sub {
+  font-size: 0.95rem;
+  color: rgba(220, 220, 255, 0.75);
+  margin-bottom: 28px;
+}
+
+/* ===== INPUTS ===== */
+.register-fields {
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.input-field::placeholder {
+  color: rgba(200, 200, 255, 0.45);
+}
+
+.input-field:focus {
+  border-color: #9e6dff;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 12px rgba(160, 120, 255, 0.25);
+}
+
+/* ===== BUTTON ===== */
+.register-btn {
+  width: 100%;
+  margin-top: 28px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(135deg, #990cd1, #6d6aff);
+  transition: 0.3s ease;
+  box-shadow: 0 0 16px rgba(130, 90, 255, 0.35);
+}
+
+.register-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 22px rgba(150, 95, 255, 0.55);
+}
+
+/* ===== REDIRECT ===== */
+.login-redirect {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: rgba(220, 220, 255, 0.75);
+}
+
+.login-redirect span {
+  color: #9e6dff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.login-redirect span:hover {
+  color: #c38cff;
+}
