@@ -6,8 +6,18 @@ export default function Landing() {
 
   return (
     <div className="landing-container">
+      <div className="stars-texture"></div>
+      {/* EFEITOS DE FUNDO */}
+      <div className="stars"></div>
+      <div className="stars2"></div>
+      <div className="stars3"></div>
+      <div className="nebula"></div>
+      <div className="space-glow"></div>
+      <div className="grain"></div>
+
       <header className="landing-header">
         <h2 className="logo">Code Odyssey</h2>
+
         <nav className="nav-btns">
           <button onClick={() => nav("/login")} className="nav-button">
             Login
@@ -25,7 +35,7 @@ export default function Landing() {
         <h1 className="hero-title">Master Your Coding Journey</h1>
         <p className="hero-subtitle">
           Track your skills, organize your week, manage tasks and evolve every
-          single day.
+          day.
         </p>
 
         <div className="hero-actions">

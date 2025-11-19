@@ -36,6 +36,11 @@ export default function Register() {
 
   return (
     <div className="register-wrapper">
+      <div className="register-stars"></div>
+      <div className="register-stars2"></div>
+      <div className="register-nebula"></div>
+      <div className="register-glow"></div>
+
       <div className="register-card">
         <h1 className="register-title">Create Your Account</h1>
         <p className="register-sub">Start your Code Odyssey</p>
