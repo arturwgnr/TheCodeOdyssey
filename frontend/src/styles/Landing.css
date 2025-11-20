@@ -1,303 +1,145 @@
-/* ===== RESET ===== */
+/* === RESET === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== BASE ===== */
 html,
 body {
-  background: transparent !important;
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
-  font-family: Inter, sans-serif;
-  position: relative;
-  z-index: -5;
-}
-
-/* ===== CONTAINER ===== */
-.landing-container {
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  z-index: 0;
+  font-family: "Inter", sans-serif;
+  background: #0a0a0f;
   color: #f5f5f7;
-  overflow: hidden;
-  background: radial-gradient(circle at 30% 20%, #14141a, #0c0c0e, #09090b);
 }
 
-/* ===========================================================
-   STARFIELD (3 layers)
-=========================================================== */
-
-/* layer 1 - estrelas maiores */
-.stars {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -3;
-  opacity: 0.35;
-  background-image: radial-gradient(2px 2px at 40% 60%, #ffffff55, transparent),
-    radial-gradient(2px 2px at 70% 20%, #ffffff33, transparent),
-    radial-gradient(2px 2px at 20% 80%, #ffffff44, transparent);
-  animation: starDrift1 22s linear infinite;
+/* === CONTAINER === */
+.landing {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #0a0a0f, #121218);
+  padding: 0 24px;
 }
 
-/* layer 2 - estrelas pequenas mais densas */
-.stars2 {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -4;
-  opacity: 0.35;
-  background-image: radial-gradient(1px 1px at 10% 80%, #ffffff55, transparent),
-    radial-gradient(1px 1px at 30% 40%, #ffffff33, transparent),
-    radial-gradient(1px 1px at 60% 20%, #ffffff44, transparent),
-    radial-gradient(1px 1px at 90% 50%, #ffffff22, transparent);
-  animation: starDrift2 28s linear infinite;
-}
-
-/* layer 3 - estrelas ultra finas */
-.stars3 {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -5;
-  opacity: 0.25;
-  background-image: radial-gradient(1px 1px at 70% 90%, #ffffff22, transparent),
-    radial-gradient(1px 1px at 40% 15%, #ffffff22, transparent),
-    radial-gradient(1px 1px at 25% 60%, #ffffff11, transparent),
-    radial-gradient(1px 1px at 85% 20%, #ffffff11, transparent);
-  animation: starDrift3 35s linear infinite;
-}
-
-.stars-texture {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -6;
-  background-image: url("https://grainy-gradients.vercel.app/stars.png");
-  background-size: cover;
-  background-repeat: repeat;
-  opacity: 0.22;
-  filter: brightness(140%);
-}
-/* star movement */
-@keyframes starDrift1 {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-250px);
-  }
-}
-
-@keyframes starDrift2 {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-150px);
-  }
-}
-
-@keyframes starDrift3 {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-100px);
-  }
-}
-
-/* ===========================================================
-   NEBULA (mais viva, corrigida)
-=========================================================== */
-.nebula {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  opacity: 0.9;
-  filter: blur(90px);
-
-  background: radial-gradient(circle at 60% 80%, #5e1fff33, transparent 55%),
-    radial-gradient(circle at 20% 30%, #00c2ff22, transparent 60%),
-    radial-gradient(circle at 80% 40%, #7f4dff33, transparent 70%);
-  animation: nebulaShift 14s ease-in-out infinite alternate;
-}
-
-@keyframes nebulaShift {
-  from {
-    transform: translateY(0) scale(1);
-  }
-  to {
-    transform: translateY(-20px) scale(1.15);
-  }
-}
-
-/* ===========================================================
-   TOP GLOW
-=========================================================== */
-.space-glow {
-  position: fixed;
-  top: -200px;
-  left: 50%;
-  width: 1400px;
-  height: 600px;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, #4a42ff22, transparent 70%);
-  z-index: -1;
-  filter: blur(120px);
-  opacity: 0.45;
-}
-
-/* ===========================================================
-   GRAIN TEXTURE
-=========================================================== */
-.grain {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.03;
-  z-index: 1;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  mix-blend-mode: overlay;
-}
-
-/* ===========================================================
-   HEADER
-=========================================================== */
+/* === HEADER === */
 .landing-header {
-  padding: 26px 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(18px);
+  padding: 32px 0;
+  border-bottom: 1px solid #1f1f2a;
 }
 
 .logo {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 800;
-  letter-spacing: -1px;
-  color: #fff;
-  text-shadow: 0 0 16px #ffffff11;
+  color: #ffffff;
+  letter-spacing: -0.5px;
 }
 
-/* NAV */
-.nav-btns {
+/* === NAVIGATION === */
+.nav {
   display: flex;
   gap: 16px;
 }
 
-.nav-button {
-  padding: 10px 22px;
-  border-radius: 12px;
+.nav-btn {
+  padding: 10px 20px;
   font-size: 14px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid #444;
+  color: #ccc;
+  transition: 0.3s ease;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #f0f0f0;
-  transition: 0.25s ease;
 }
 
-.nav-button:hover {
-  background: rgba(255, 255, 255, 0.12);
-  transform: translateY(-1px);
+.nav-btn:hover {
+  background: #1a1a1f;
+  color: #fff;
 }
 
-.nav-register {
+.nav-highlight {
   background: #ffffff;
   color: #000;
   border: none;
 }
 
-.nav-register:hover {
-  background: #e8e8e8;
+.nav-highlight:hover {
+  background: #eaeaea;
 }
 
-/* ===========================================================
-   HERO
-=========================================================== */
+/* === HERO === */
 .hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-top: 140px;
-  padding: 0 48px;
-  animation: fadeUp 1.4s ease forwards;
-  opacity: 0;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  padding: 80px 0;
 }
 
 .hero-title {
-  font-size: 64px;
+  font-size: 56px;
   font-weight: 800;
-  color: #fff;
-  letter-spacing: -1px;
-  text-shadow: 0 0 28px #ffffff13;
+  max-width: 800px;
+  line-height: 1.2;
+  color: #ffffff;
 }
 
 .hero-subtitle {
-  margin-top: 22px;
-  font-size: 19px;
-  color: #b8b8c5;
-  max-width: 620px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.55;
+  margin-top: 20px;
+  font-size: 18px;
+  max-width: 600px;
+  color: #b0b0c0;
+  line-height: 1.6;
 }
 
-/* ===========================================================
-   CTAs
-=========================================================== */
+/* === CTA BUTTONS === */
 .hero-actions {
-  margin-top: 45px;
+  margin-top: 40px;
   display: flex;
-  justify-content: center;
   gap: 20px;
 }
 
-.cta-primary {
-  padding: 14px 36px;
+.cta {
+  padding: 14px 32px;
   font-size: 16px;
-  font-weight: 600;
   border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cta-primary {
   background: linear-gradient(135deg, #ffffff, #dfe0e0);
   color: #000;
-  cursor: pointer;
   border: none;
-  transition: 0.25s ease;
 }
 
 .cta-primary:hover {
   background: #e9e9e9;
-  transform: translateY(-2px);
 }
 
 .cta-secondary {
-  padding: 14px 36px;
-  font-size: 16px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  color: #eaeaea;
-  cursor: pointer;
-  transition: 0.25s ease;
+  background: transparent;
+  border: 1px solid #444;
+  color: #ccc;
 }
 
 .cta-secondary:hover {
-  background: rgba(255, 255, 255, 0.12);
-  transform: translateY(-2px);
+  background: #1a1a1f;
+  color: #fff;
+}
+
+/* === FOOTER === */
+.landing-footer {
+  text-align: center;
+  padding: 24px 0;
+  font-size: 13px;
+  color: #666;
+  border-top: 1px solid #1f1f2a;
 }

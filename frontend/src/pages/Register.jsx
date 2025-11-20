@@ -35,65 +35,69 @@ export default function Register() {
   }
 
   return (
-    <div className="register-wrapper">
-      <div className="register-stars"></div>
-      <div className="register-stars2"></div>
-      <div className="register-nebula"></div>
-      <div className="register-glow"></div>
-
-      <div className="register-card">
-        <h1 className="register-title">Create Your Account</h1>
-        <p className="register-sub">Start your Code Odyssey</p>
-
-        <div className="register-fields">
-          <input
-            value={formData.username}
-            onChange={(e) =>
-              setFormData({ ...formData, username: e.target.value })
-            }
-            type="text"
-            placeholder="Username"
-            className="input-field"
-          />
-
-          <input
-            value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
-            type="email"
-            placeholder="Email"
-            className="input-field"
-          />
-
-          <input
-            value={formData.password}
-            onChange={(e) =>
-              setFormData({ ...formData, password: e.target.value })
-            }
-            type="password"
-            placeholder="Password"
-            className="input-field"
-          />
-
-          <input
-            value={repeatedPassword}
-            onChange={(e) => setRepeatedPassword(e.target.value)}
-            type="password"
-            placeholder="Repeat password"
-            className="input-field"
-          />
-        </div>
-
-        <button className="register-btn" onClick={handleRegister}>
-          Create Account
-        </button>
-
-        <p className="login-redirect">
-          Already have an account?{" "}
-          <span onClick={() => nav("/login")}>Login</span>
-        </p>
+    <>
+      <div className="register-background">
+        <div className="register-stars"></div>
+        <div className="register-stars2"></div>
+        <div className="register-nebula"></div>
+        <div className="register-glow"></div>
       </div>
-    </div>
+
+      <div className="register-wrapper">
+        <div className="register-card">
+          <h1 className="register-title">Create Your Account</h1>
+          <p className="register-sub">Start your Code Odyssey</p>
+
+          <div className="register-fields">
+            <input
+              value={formData.username}
+              onChange={(e) =>
+                setFormData({ ...formData, username: e.target.value })
+              }
+              type="text"
+              placeholder="Username"
+              className="input-field"
+            />
+
+            <input
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+              type="email"
+              placeholder="Email"
+              className="input-field"
+            />
+
+            <input
+              value={formData.password}
+              onChange={(e) =>
+                setFormData({ ...formData, password: e.target.value })
+              }
+              type="password"
+              placeholder="Password"
+              className="input-field"
+            />
+
+            <input
+              value={repeatedPassword}
+              onChange={(e) => setRepeatedPassword(e.target.value)}
+              type="password"
+              placeholder="Repeat password"
+              className="input-field"
+            />
+          </div>
+
+          <button className="register-btn" onClick={handleRegister}>
+            Create Account
+          </button>
+
+          <p className="login-redirect">
+            Already have an account?{" "}
+            <span onClick={() => nav("/login")}>Login</span>
+          </p>
+        </div>
+      </div>
+    </>
   );
 }

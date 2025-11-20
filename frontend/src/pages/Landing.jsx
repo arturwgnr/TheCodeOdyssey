@@ -5,48 +5,41 @@ export default function Landing() {
   const nav = useNavigate();
 
   return (
-    <div className="landing-container">
-      <div className="stars-texture"></div>
-      {/* EFEITOS DE FUNDO */}
-      <div className="stars"></div>
-      <div className="stars2"></div>
-      <div className="stars3"></div>
-      <div className="nebula"></div>
-      <div className="space-glow"></div>
-      <div className="grain"></div>
-
+    <div className="landing">
       <header className="landing-header">
-        <h2 className="logo">Code Odyssey</h2>
-
-        <nav className="nav-btns">
-          <button onClick={() => nav("/login")} className="nav-button">
+        <h1 className="logo">Code Odyssey</h1>
+        <nav className="nav">
+          <button onClick={() => nav("/login")} className="nav-btn">
             Login
           </button>
           <button
             onClick={() => nav("/register")}
-            className="nav-button nav-register"
+            className="nav-btn nav-highlight"
           >
             Register
           </button>
         </nav>
       </header>
 
-      <section className="hero">
-        <h1 className="hero-title">Master Your Coding Journey</h1>
+      <main className="hero">
+        <h2 className="hero-title">Elevate Your Coding Journey</h2>
         <p className="hero-subtitle">
-          Track your skills, organize your week, manage tasks and evolve every
-          day.
+          Build habits, track progress, and master your skills in a space
+          designed for growth.
         </p>
-
         <div className="hero-actions">
-          <button className="cta-primary" onClick={() => nav("/dashboard")}>
-            Enter Dashboard
+          <button className="cta cta-primary" onClick={() => nav("/dashboard")}>
+            Launch Dashboard
           </button>
-          <button className="cta-secondary" onClick={() => nav("/tasks")}>
-            About
+          <button className="cta cta-secondary" onClick={() => nav("/tasks")}>
+            Learn More
           </button>
         </div>
-      </section>
+      </main>
+
+      <footer className="landing-footer">
+        <p>© 2025 Code Odyssey. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
