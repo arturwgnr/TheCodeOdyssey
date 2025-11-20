@@ -19,7 +19,7 @@ export default function Dashboard() {
       <Topbar />
       <h1>Dashboard</h1>
       <button onClick={handleLogout}>Logout</button>
-      <button onClick={handleLogout}>Week planning</button>
+      <button onClick={() => nav("/week-planner")}>Week planning</button>
     </div>
   );
 }

@@ -14,7 +14,9 @@ export default function Topbar() {
 
   return (
     <div className="topbar">
-      <div className="left"></div>
+      <div className="left">
+        <h1>Code Odyssey</h1>
+      </div>
 
       <div className="center"></div>
 

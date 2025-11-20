@@ -3,6 +3,7 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import WeekPlanner from "./pages/WeekPlanner";
 import PrivateRoute from "./components/PrivateRoute";
 import "./App.css";
 
@@ -19,6 +20,14 @@ function App() {
           element={
             <PrivateRoute>
               <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/week-planner"
+          element={
+            <PrivateRoute>
+              <WeekPlanner />
             </PrivateRoute>
           }
         />
