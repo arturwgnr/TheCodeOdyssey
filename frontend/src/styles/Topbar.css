@@ -1,37 +1,99 @@
+/* ===== TOPBAR WRAPPER ===== */
 .topbar {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(116, 116, 116);
-  padding-right: 10px;
-  padding-left: 10px;
+  width: 100%;
   height: 70px;
-  margin-bottom: 20px;
+
+  display: flex;
   align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
+  justify-content: space-between;
+  padding: 0 26px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 0 16px rgba(130, 80, 255, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
+/* ===== LEFT SECTION ===== */
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #ffffff, #beb6ff, #ffffff);
+  -webkit-background-clip: text;
+  color: transparent;
+
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+/* ===== RIGHT SECTION ===== */
 .right {
   display: flex;
   align-items: center;
+  gap: 16px;
 }
 
-.config-button {
-  font-size: 22px;
-  background: transparent;
-  border: none;
-}
-
+/* USER AVATAR */
 .user-img {
-  background-color: red;
-  height: 50px;
-  width: 50px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  margin-left: 10px;
-  margin-right: 10px;
+  cursor: pointer;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 14px rgba(140, 80, 255, 0.22);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.user-img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 22px rgba(150, 70, 255, 0.35);
+}
+
+/* CONFIG BUTTON */
+.config-button {
+  font-size: 20px;
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 10px;
+  border-radius: 12px;
+
+  color: #e8e8f1;
+  transition: all 0.25s ease;
+}
+
+.config-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* LOGOUT BUTTON */
 .logout-button {
-  margin-left: 10px;
-  height: 20px;
+  padding: 8px 16px;
+  border-radius: 14px;
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e8e8f1;
+
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+.logout-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
 }

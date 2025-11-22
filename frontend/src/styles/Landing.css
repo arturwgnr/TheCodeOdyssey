@@ -52,7 +52,7 @@ html {
       radial-gradient(circle at center, #0a0a0d, #09090c, #07070a);
 
   filter: blur(34px) brightness(1.08);
-  animation: softMove 110s linear infinite;
+  animation: softMove 95s linear infinite;
 }
 
 /* Soft film texture */
