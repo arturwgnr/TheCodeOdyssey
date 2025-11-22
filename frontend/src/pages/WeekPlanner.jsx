@@ -1,7 +1,23 @@
+import { useState } from "react";
 import Topbar from "../components/Topbar";
 import "../styles/WeekPlanner.css";
 
 export default function WeekPlanner() {
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    status: "pending",
+    date: null,
+    priority: "",
+    category: "",
+  });
+
+  const [tasks, setTasks] = useState([]);
+
+  //add: desc, status
+
+  //idea: DESCRICAO add com condicional caso user queira ao clicar na task e mostrar mais opcoes / STATUS add default pending e depois user pode mudar pra in progress ou done.
+
   return (
     <div className="week-page">
       <Topbar />
@@ -13,37 +29,74 @@ export default function WeekPlanner() {
 
           {/* ---- Task Creation Form ---- */}
           <div className="task-form">
-            <input type="text" placeholder="Task title" />
-            <select>
-              <option>Priority</option>
-              <option>High</option>
-              <option>Medium</option>
-              <option>Low</option>
+            <input
+              name="title"
+              value={formData.title}
+              onChange={(e) =>
+                setFormData({ ...formData, [e.target.name]: e.target.value })
+              }
+              type="text"
+              placeholder="Task title"
+            />
+
+            <select
+              name="priority"
+              value={formData.priority}
+              onChange={(e) =>
+                setFormData({ ...formData, [e.target.name]: e.target.value })
+              }
+            >
+              <option value="">Priority</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
             </select>
-            <select>
-              <option>Category</option>
-              <option>Study</option>
-              <option>Personal</option>
-              <option>Gym</option>
-              <option>Work</option>
+            <select
+              name="category"
+              value={formData.category}
+              onChange={(e) =>
+                setFormData({ ...formData, [e.target.name]: e.target.value })
+              }
+            >
+              <option value="">Category</option>
+              <option value="study">Study</option>
+              <option value="personal">Personal</option>
+              <option value="gym">Gym</option>
+              <option value="work">Work</option>
             </select>
-            <button>Add</button>
+            <button
+              onClick={() => {
+                setTasks([...tasks, { ...formData, id: crypto.randomUUID() }]);
+                setFormData({
+                  title: "",
+                  description: "",
+                  status: "pending",
+                  date: null,
+                  priority: "",
+                  category: "",
+                });
+              }}
+            >
+              Add
+            </button>
           </div>
 
           {/* ---- Task List ---- */}
           <div className="inbox-list">
-            <div className="task-card">
-              <div className="task-left">
-                <div className="task-priority-bar"></div>
-                <p className="task-title">Example task</p>
-              </div>
+            {tasks.map((task) => (
+              <div className="task-card" key={task.id}>
+                <div className="task-left">
+                  <div className="task-priority-bar"></div>
+                  <p className="task-title">{task.title}</p>
+                </div>
 
-              <div className="task-actions">
-                <button>Edit</button>
-                <button>Done</button>
-                <button>Delete</button>
+                <div className="task-actions">
+                  <button>Edit</button>
+                  <button>Done</button>
+                  <button>Delete</button>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </section>
 

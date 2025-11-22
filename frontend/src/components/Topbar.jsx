@@ -15,7 +15,9 @@ export default function Topbar() {
   return (
     <div className="topbar">
       <div className="left">
-        <h1>Code Odyssey</h1>
+        <h1 className="logo" onClick={() => nav("/dashboard")}>
+          Code Odyssey
+        </h1>
       </div>
 
       <div className="center"></div>

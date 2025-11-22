@@ -24,6 +24,10 @@ body {
   background: linear-gradient(145deg, #0a0a0f, #121218);
 }
 
+.logo {
+  cursor: pointer;
+}
+
 /* === CARD === */
 .register-card {
   width: 100%;
